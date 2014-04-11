@@ -2,6 +2,7 @@ PotaDb::Application.routes.draw do
 
   defaults format: :json do
     root 'queries#index'
+    get '/map_query', to: 'queries#map'
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

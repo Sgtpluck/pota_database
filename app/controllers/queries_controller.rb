@@ -6,4 +6,7 @@ class QueriesController < ApplicationController
     #   format.html { render json: @data, status: :ok}
     # end
   end
+
+  def map
+  end
 end

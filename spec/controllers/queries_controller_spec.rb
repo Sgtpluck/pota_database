@@ -21,4 +21,11 @@ describe QueriesController do
     end
   end
 
+  describe "get 'map_query'" do
+    it 'should be successful' do
+      get 'map'
+
+      expect(response).to be_successful
+    end
+  end
 end

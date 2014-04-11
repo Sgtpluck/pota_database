@@ -11,10 +11,12 @@ class DataFinder
     end
   end
 
+  private
+
   def self.find_uniq_ids
     @most_recent_ids = []
     serial_number = []
-    WaterData.all.order('time ASC').each do |data|
+    WaterData.all.order('time DESC').each do |data|
       unless serial_number.include? data.serial
         @most_recent_ids << data.id
         serial_number << data.serial
