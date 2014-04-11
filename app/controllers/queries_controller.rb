@@ -8,5 +8,6 @@ class QueriesController < ApplicationController
   end
 
   def map
+    @data = DataFinder.all_unique_serial_ids
   end
 end
