@@ -12,6 +12,8 @@ gem 'jbuilder', '~> 1.2'
 gem 'figaro'
 gem 'brakeman'
 
+gem 'httparty'
+
 group :development, :test do
   gem "rspec-rails"
   gem "guard-rspec"
