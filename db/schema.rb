@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140410221344) do
+ActiveRecord::Schema.define(version: 20140411162951) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,15 +19,14 @@ ActiveRecord::Schema.define(version: 20140410221344) do
   create_table "water_data", force: true do |t|
     t.string   "lat"
     t.string   "long"
-    t.date     "date"
-    t.time     "time"
     t.integer  "serial"
-    t.integer  "vbatt"
+    t.float    "vbatt"
     t.integer  "cycles"
     t.integer  "failed_cycles"
+    t.integer  "downloads"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "downloads"
+    t.datetime "time"
   end
 
 end
