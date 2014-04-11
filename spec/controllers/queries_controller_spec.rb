@@ -1,6 +1,9 @@
 require 'spec_helper'
 
 describe QueriesController do
+  before do
+    request.env['HTTP_ACCEPT'] = 'application/json'
+  end
 
   describe "get 'index'" do
     it 'should be succesful' do
