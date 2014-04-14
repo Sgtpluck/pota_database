@@ -14,7 +14,7 @@ role :db,  %w{ubuntu@ec2-54-187-74-129.us-west-2.compute.amazonaws.com}
 # definition into the server list. The second argument
 # something that quacks like a hash can be used to set
 # extended properties on the server.
-server 'ec2-54-187-74-129.us-west-2.compute.amazonaws.com', user: 'ubuntu', roles: %w{web app}, my_property: :my_value
+server 'ec2-54-187-74-129.us-west-2.compute.amazonaws.com', user: 'deploy', roles: %w{web app}, my_property: :my_value
 
 server 'ec2-54-187-74-129.us-west-2.compute.amazonaws.com',
   user: 'ubuntu',
