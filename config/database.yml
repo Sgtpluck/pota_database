@@ -33,4 +33,5 @@ production:
   encoding: unicode
   database: pota_db_production
   pool: 5
+  username: ubuntu
 

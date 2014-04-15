@@ -1,13 +1,14 @@
 class QueriesController < ApplicationController
   def index
     @data = DataFinder.all_the_data
-    # respond_to do |format|
-    #   format.json { render json: @data, status: :ok }
-    #   format.html { render json: @data, status: :ok}
-    # end
   end
 
   def map
     @data = DataFinder.all_unique_serial_ids
+  end
+
+  def bar
+    @data = DataFinder.all_unique_serial_ids
+    # http://localhost:3000/bar_query?=&lat=124&long=-45
   end
 end
