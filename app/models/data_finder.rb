@@ -1,4 +1,10 @@
 class DataFinder
+  attr_reader :params_hash
+
+  def initialize(params_hash)
+    @params_hash = params_hash
+  end
+  
   def self.all_the_data
     WaterData.all
   end
@@ -21,6 +27,6 @@ class DataFinder
         @most_recent_ids << data.id
         serial_number << data.serial
       end
-    end
+    end 
   end
 end
