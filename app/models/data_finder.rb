@@ -4,6 +4,10 @@ class DataFinder
   def initialize(params_hash)
     @params_hash = params_hash
   end
+
+  def date_range
+     WaterData.where(time: (@params_hash[:beginning_date]..@params_hash[:ending_date]))
+  end
   
   def self.all_the_data
     WaterData.all
