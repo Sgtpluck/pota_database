@@ -26,6 +26,11 @@ class DataFinder
     WaterData.where(id: @most_recent_ids).group('round((vbatt::numeric),2)').count.sort
   end
 
+  def self.histo_cycle
+    find_uniq_ids
+    WaterData.where(id: @most_recent_ids).group(:cycles).count.sort
+  end
+
   private
 
   def self.find_uniq_ids

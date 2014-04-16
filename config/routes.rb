@@ -6,6 +6,7 @@ PotaDb::Application.routes.draw do
     get '/bar_query',   to: 'queries#bar'
     get '/histo_query', to: 'queries#histo'
     get '/batt_query',  to: 'queries#batt'
+    get '/histo_cycle', to: 'queries#histo_cycle'
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
