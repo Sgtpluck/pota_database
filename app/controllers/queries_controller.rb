@@ -18,12 +18,13 @@ class QueriesController < ApplicationController
   end
 
   def batt
+    @data = DataFinder.counting_vbatt
   end
 
   private
 
   def unique_current
-    @data = DataFinder.all_unique_serial_ids
+    @data = DataFinder.most_recent_unique_serial_ids
   end
 
 end
