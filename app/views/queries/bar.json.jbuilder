@@ -4,8 +4,6 @@ json.xAxis do
   json.categories @data.map(&:serial)
 end
 
-value = (1..10).map {|n| n+1}
-
 json.series [['cycles', 'Disinfection Cycles'],['failed_cycles','Failures'],['downloads', 'Downloads'],['vbatt','Battery Life']].each do |name|
     json.name name[1]
     json.data @data.map {|data| data.send(name[0]) }

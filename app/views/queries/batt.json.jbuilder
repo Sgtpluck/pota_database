@@ -1,0 +1,1 @@
+json.batt @data.map {|datum| datum.vbatt.round(2) }
