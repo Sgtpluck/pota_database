@@ -13,12 +13,17 @@ class DataFinder
     WaterData.all
   end
 
-  def self.all_unique_serial_ids
+  def self.most_recent_unique_serial_ids
    # grab the most recent of all the unique items
     find_uniq_ids
     @most_recent_ids.map do |id|
       WaterData.find(id)
     end
+  end
+
+  def self.counting_vbatt
+    find_uniq_ids
+    WaterData.where(id: @most_recent_ids).group('round((vbatt::numeric),2)').count.sort
   end
 
   private
