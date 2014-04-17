@@ -6,7 +6,7 @@ class DataFinder
   end
 
   def date_range
-     WaterData.where(time: (@params_hash[:beginning_date]..@params_hash[:ending_date]))
+     WaterData.where(time: (@params_hash[:beginning_date]..@params_hash[:ending_date])).group(:cycles).count.sort
   end
   
   def self.all_the_data
@@ -29,6 +29,10 @@ class DataFinder
   def self.histo_cycle
     find_uniq_ids
     WaterData.where(id: @most_recent_ids).group(:cycles).count.sort
+  end
+
+  def self.how_many_read_histo
+    WaterData.group(:time).count
   end
 
   private
