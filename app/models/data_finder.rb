@@ -6,6 +6,7 @@ class DataFinder
   end
 
   def date_range
+    puts @params_hash[:beginning_date].inspect
      WaterData.where(time: (@params_hash[:beginning_date]..@params_hash[:ending_date])).group(:cycles).count.sort
   end
   
