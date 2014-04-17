@@ -1,3 +1,2 @@
-json.water_datum @data do |datum|
-  json.extract! datum, :time, :id, :lat, :long, :serial, :vbatt, :cycles, :failed_cycles, :downloads, :created_at
-end
+json.categories @data.map {|datum| datum[0] }
+json.data @data.map {|datum| datum[1] }
