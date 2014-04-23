@@ -1,5 +1,5 @@
 class QueriesController < ApplicationController
-  before_action :unique_current, except: [:index, :histo, :batt, :histo_cycle]
+  before_action :unique_current, except: [:index, :histo, :batt, :histo_cycle, :bar]
 
   def index
     @data = DataFinder.all_the_data
@@ -9,7 +9,7 @@ class QueriesController < ApplicationController
   end
 
   def bar
-    # http://localhost:3000/bar_query?=&lat=124&long=-45
+    @data = DataFinder.most_recent_unique_serial_ids[0..50]
   end
 
   def histo
